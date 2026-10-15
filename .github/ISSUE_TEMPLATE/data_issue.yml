@@ -1,0 +1,35 @@
+name: Data issue
+description: Report a metadata, accession, naming, or FASTA-file problem.
+title: "[Data issue]: "
+labels:
+  - data
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record ID or accession
+      description: Provide the FVC record ID, assembly/run accession, or file name.
+      placeholder: FVC001 or GCA_019050325.1
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Issue type
+      options:
+        - Taxonomic name
+        - Type-strain designation
+        - Accession or source link
+        - FASTA content
+        - Metadata or documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Description and supporting source
+      description: Explain the issue and include a stable database record or publication link when possible.
+    validations:
+      required: true
+
